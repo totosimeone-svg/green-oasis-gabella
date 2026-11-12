@@ -304,9 +304,9 @@ html.no-css-scroll .capitolo.aperta .scena{clip-path:inset(0 round 0);transform:
 .righello .dove small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--avorio-3);margin-top:2px}
 .righello .km{font-family:var(--mono);font-size:13px;letter-spacing:.06em;font-variant-numeric:tabular-nums;color:var(--acc);text-align:right;white-space:nowrap}
 .righello .km b{font-family:var(--display);font-weight:300;font-size:26px;color:var(--avorio);letter-spacing:-.02em;margin-right:4px}
-.righello .barra{grid-column:1/-1;height:3px;border-radius:99px;background:var(--line-2);overflow:hidden}
-.righello .barra i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--acc),color-mix(in srgb,var(--acc) 40%,transparent));transform-origin:left;transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
-.in .righello .barra i,.righello.in .barra i{transform:none}
+.righello .asta{grid-column:1/-1;height:3px;border-radius:99px;background:var(--line-2);overflow:hidden}
+.righello .asta i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--acc),color-mix(in srgb,var(--acc) 40%,transparent));transform-origin:left;transform:scaleX(0);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.in .righello .asta i,.righello.in .barra i{transform:none}
 .righello.lontano{margin-top:8px;padding-top:12px;border-top:1px solid var(--line);display:flex;gap:10px 18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--avorio-2)}
 .righello.lontano b{font-family:var(--display);font-weight:300;font-size:22px;color:var(--avorio);letter-spacing:-.02em;margin-right:4px}
 .avviso{border:1px solid color-mix(in srgb,var(--oro) 45%,transparent);background:color-mix(in srgb,var(--oro) 8%,transparent);border-radius:16px;padding:16px 18px;font-size:15px;color:var(--avorio-2);line-height:1.55}
@@ -363,7 +363,7 @@ footer.pie a{color:var(--avorio-2)}
 /* ---------- senza JavaScript: tutto visibile, prima foto di ogni scena ---------- */
 html.no-js .sale,html.no-js .capitolo .blocco>*{opacity:1;transform:none}
 html.no-js .capitolo .scena img:first-of-type{opacity:1;transform:none}
-html.no-js .righello .barra i{transform:none}
+html.no-js .righello .asta i{transform:none}
 html.no-js .orologio{display:none}
 
 /* ---------- computer ---------- */
@@ -395,11 +395,11 @@ html.no-js .orologio{display:none}
   .capitolo .blocco:first-child{padding-top:60vh}
   .capitolo .pannello{background:transparent;border-color:transparent;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none;border-radius:0}
   .capitolo .scena::after{background:
-    linear-gradient(90deg,color-mix(in srgb,var(--bg) 78%,transparent) 0%,color-mix(in srgb,var(--bg) 40%,transparent) 38%,transparent 64%),
+    linear-gradient(90deg,color-mix(in srgb,var(--bg) 90%,transparent) 0%,color-mix(in srgb,var(--bg) 58%,transparent) 40%,transparent 72%),
     linear-gradient(0deg,var(--bg) 0%,transparent 22%)}
-  .capitolo:nth-child(even) .racconto{display:flex;justify-content:flex-end}
+  .capitolo:nth-child(even) .racconto{display:flex;flex-direction:column;align-items:flex-end}
   .capitolo:nth-child(even) .scena::after{background:
-    linear-gradient(270deg,color-mix(in srgb,var(--bg) 78%,transparent) 0%,color-mix(in srgb,var(--bg) 40%,transparent) 38%,transparent 64%),
+    linear-gradient(270deg,color-mix(in srgb,var(--bg) 90%,transparent) 0%,color-mix(in srgb,var(--bg) 58%,transparent) 40%,transparent 72%),
     linear-gradient(0deg,var(--bg) 0%,transparent 22%)}
   .alloggi .griglia{grid-template-columns:repeat(3,minmax(0,1fr))}
   .scheda.chalet{grid-column:1/-1;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
@@ -441,12 +441,17 @@ html.no-js .orologio{display:none}
   html{scroll-behavior:auto}
   html.css-scroll,html.css-scroll .hero .foto,html.css-scroll .hero .testo,html.css-scroll .capitolo .scena,html.css-scroll .sale{animation:none!important}
   .cielo i,.cielo .stelle circle,.hero .invito span{animation:none!important}
-  .capitolo .scena img,.capitolo .blocco>*,.sale,.scheda,.scheda figure img,.momento,.momento img,.contatto,.btn,.famiglia .nomi li,.righello .barra i,html.no-css-scroll .capitolo .scena{transition:none!important}
+  .capitolo .scena img,.capitolo .blocco>*,.sale,.scheda,.scheda figure img,.momento,.momento img,.contatto,.btn,.famiglia .nomi li,.righello .asta i,html.no-css-scroll .capitolo .scena{transition:none!important}
   .capitolo .blocco>*,.sale{opacity:1!important;transform:none!important}
   .capitolo .scena{clip-path:none!important;transform:none!important}
-  .righello .barra i{transform:none!important}
+  .righello .asta i{transform:none!important}
   .hero .foto .par{transform:none!important}
 }
 
 /* Il cartiglio fisso copriva i testi in basso a sinistra su schermi grandi (controllo di Fable, 12/11): resta solo il piè di pagina. */
 @media (min-width:1024px){.bozza{display:none}}
+
+/* Controllo del revisore (13/11): testata con velo per leggere i testi che le passano sotto; m² minuscolo; capitoli pari in colonna. */
+header.top{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 72%,transparent) 0%,color-mix(in srgb,var(--bg) 30%,transparent) 65%,transparent 100%)}
+.unita{text-transform:none}
+@media (max-width:767px){.hero .scena img{object-position:42% 50%}}
