@@ -454,4 +454,4 @@ html.no-js .orologio{display:none}
 /* Controllo del revisore (13/11): testata con velo per leggere i testi che le passano sotto; m² minuscolo; capitoli pari in colonna. */
 header.top{background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 72%,transparent) 0%,color-mix(in srgb,var(--bg) 30%,transparent) 65%,transparent 100%)}
 .unita{text-transform:none}
-@media (max-width:767px){.hero .scena img{object-position:42% 50%}}
+@media (max-width:767px){.hero img{object-position:42% 50%}}
