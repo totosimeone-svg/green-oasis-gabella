@@ -447,3 +447,6 @@ html.no-js .orologio{display:none}
   .righello .barra i{transform:none!important}
   .hero .foto .par{transform:none!important}
 }
+
+/* Il cartiglio fisso copriva i testi in basso a sinistra su schermi grandi (controllo di Fable, 12/11): resta solo il piè di pagina. */
+@media (min-width:1024px){.bozza{display:none}}
