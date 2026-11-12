@@ -96,7 +96,7 @@ em,i.c{font-style:italic;font-weight:300}
 .cielo .sole{--c:var(--glow-b);width:70vmax;height:70vmax;left:68vw;top:var(--sole-y);translate:-50% -50%;opacity:.55;animation:respira 16s ease-in-out infinite alternate}
 .cielo .a{--c:var(--glow-a);width:95vmax;height:95vmax;left:-35vmax;top:-30vmax;opacity:.55;animation:derivaA 24s ease-in-out infinite alternate}
 .cielo .b{--c:var(--glow-c);width:80vmax;height:80vmax;right:-34vmax;bottom:-34vmax;opacity:.42;animation:derivaB 29s ease-in-out infinite alternate}
-.cielo .luna{position:absolute;left:78vw;top:14vh;width:92px;height:92px;border-radius:50%;opacity:var(--luna);translate:-50% -50%;background:radial-gradient(circle at 38% 36%,#fffaf0,#e9e2cf 55%,#bfb8a6);box-shadow:0 0 60px 20px rgba(255,250,240,.18),0 0 160px 60px rgba(107,63,184,.25)}
+.cielo .luna{position:absolute;left:91vw;top:10vh;width:78px;height:78px;border-radius:50%;opacity:calc(var(--luna)*.6);translate:-50% -50%;background:radial-gradient(circle at 38% 36%,#fffaf0,#e9e2cf 55%,#bfb8a6);box-shadow:0 0 60px 20px rgba(255,250,240,.18),0 0 160px 60px rgba(107,63,184,.25)}
 .cielo .stelle{position:absolute;inset:0;opacity:var(--stelle);width:100%;height:100%}
 .cielo .stelle circle{fill:#fff;animation:scintilla 4s ease-in-out infinite alternate}
 .cielo .stelle circle:nth-child(3n){animation-delay:-1.3s}
@@ -165,7 +165,7 @@ nav.menu a:hover{opacity:1}
 
 /* ---------- la giornata (capitoli) ---------- */
 .giornata{position:relative}
-.giornata>.testa{padding-top:clamp(72px,12vh,140px)}
+.giornata>.contenitore{padding-top:clamp(72px,12vh,140px)}
 .capitolo{position:relative;min-height:230vh;view-timeline-name:--cap;view-timeline-axis:block}
 .capitolo .scena{position:sticky;top:0;height:100svh;overflow:hidden;z-index:0;clip-path:inset(0 round 0);transform:scale(1)}
 .capitolo .scena img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 9s linear}
